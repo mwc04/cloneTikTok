@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikTok Style Video</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+      }
+
+      .video-container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Phần mô tả của video */
+      .description {
+        position: absolute;
+        bottom: 80px;
+        left: 20px;
+        color: white;
+        font-family: Arial, sans-serif;
+        max-width: 70%;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .description h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      .description p {
+        font-size: 14px;
+      }
+
+      /* Các nút hành động (like, comment, share) */
+      .actions {
+        position: absolute;
+        right: 20px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 10;
+      }
+
+      .action {
+        color: white;
+        text-align: center;
+        font-size: 24px;
+      }
+
+      .action span {
+        display: block;
+        font-size: 14px;
+      }
+
+      .action.like span:first-child {
+        color: red;
+      }
+
+      .action.comment span:first-child,
+      .action.share span:first-child {
+        color: white;
+      }
+      .video-container {
+        height: 100vh;
+        width: 100vw;
+        scroll-snap-align: start;
+        overflow-y: scroll;
+        scroll-snap-type: y mandatory;
+      }
+
+      .like-button {
+        position: absolute;
+        bottom: 150px;
+        right: 30px;
+        cursor: pointer;
+      }
+
+      .heart {
+        font-size: 36px;
+        color: white;
+        opacity: 0;
+        transition: all 0.5s;
+      }
+
+      .liked .heart {
+        color: red;
+        opacity: 1;
+        animation: fly 1s ease forwards;
+      }
+
+      @keyframes fly {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <div class="video-container">
+      <video src="/Video/video1.mp4" class="video" controls></video>
+      <div class="description">
+        <h2>Video Title</h2>
+        <p>Video description here. Add any additional details.</p>
+      </div>
+      <div class="actions">
+        <div class="action like">
+          <span>&hearts;</span>
+          <span>1.2K</span>
+        </div>
+        <div class="action comment">
+          <span>&#x1F5E8;</span>
+          <span>300</span>
+        </div>
+        <div class="action share">
+          <span>&#x1F4E4;</span>
+          <span>Share</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="like-button" onclick="likeVideo()">
+      <i class="heart">&#x2665;</i>
+    </div>
+
+    <script>
+      function likeVideo() {
+        const likeBtn = document.querySelector(".like-button");
+        likeBtn.classList.toggle("liked");
+      }
+
+      document.addEventListener("scroll", function () {
+        const videos = document.querySelectorAll(".video");
+
+        videos.forEach((video) => {
+          const rect = video.getBoundingClientRect();
+          if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      });
+    </script>
+
+    <script src="/js/"></script>
+  </body>
+</html>

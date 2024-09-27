@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", TikTokFont, Arial, Tahoma, PingFangSC,
+    sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header-container {
+  margin: 0 30px;
+}
+
+.header-logo {
+  padding: 0 60px 0 0;
+}
+
+.header-search {
+  width: 105%;
+  height: 40px;
+  background-color: #f1f1f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.header-search input {
+  width: 390px;
+  border: none;
+  background-color: #f1f1f2;
+  padding: 11px 0;
+  border-radius: 30px 0 0px 30px;
+  outline: none;
+  display: flex;
+  margin-left: 15px;
+  /* padding-left: 10px; */
+}
+
+.header-search span {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 2px;
+  background-color: #d3d3d3;
+  right: 40.1%;
+}
+
+.header-search button {
+  flex: 1;
+  border: none;
+  height: 100%;
+  outline: none;
+  font-size: 15px;
+  border-radius: 0px 30px 30px 0px;
+  cursor: pointer;
+}
+
+.header-search button .fa-solid {
+  font-size: 18px;
+  color: #bababa;
+}
+
+.right-header-container {
+  padding: 0 0 0 60p x;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-upload {
+  border: 1px solid #e6e6e6;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 0 0;
+}
+
+.header-upload a {
+  text-decoration: none;
+  color: #000;
+}
+
+.header-upload span {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+}
+
+.header-icons {
+  margin: 0 10px;
+}
+
+.header-icons svg {
+  margin: 0 5px;
+  color: #000;
+}
+
+.header-user img {
+  border-radius: 50%;
+}
+
+.layout {
+  display: flex;
+  margin-top: 4%;
+}
+
+.left-layout {
+  width: 25%;
+  height: 1000px;
+  background-color: aqua;
+  z-index: 5;
+  height: 660px;
+  overflow-y: auto;
+}
+
+.right-layout {
+  width: 75%;
+  height: 1000px;
+  z-index: 1;
+}
+
+.video-container {
+  flex: 1;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.video-wrapper {
+  width: 60%;
+  height: 90%;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.video {
+  max-height: 100%;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+.left-layout-content a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
